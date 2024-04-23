@@ -4,16 +4,21 @@
     "theme": {
       "sidebar": false,
       "toc": false,
-      "layout": "full"
+      "layout": "full",
+      "timestamp": false
     }
   },
-  "blog": {
-    "title": "Blog",
-    "display": "normal",
+  "index": {
+    "title": "Home",
     "type": "page",
-    "theme": {
-      "layout": "default"
-    }
+    "display": "normal",
+    "route": "/"
+  },
+  "showcase": {
+    "title": "Showcase",
+    "type": "page",
+    "display": "normal",
+    "route": "/showcase"
   },
   "docs": {
     "title": "Documentation",
@@ -23,6 +28,15 @@
       "sidebar": true,
       "toc": true,
       "layout": "default"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "display": "normal",
+    "type": "page",
+    "theme": {
+      "layout": "raw",
+      "timestamp": false
     }
   }
 }

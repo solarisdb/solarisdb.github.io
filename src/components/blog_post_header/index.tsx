@@ -1,23 +1,24 @@
 import { useConfig } from 'nextra-theme-docs';
+import { Container, Title, PostDate, Description } from './styled';
 
 export default function BlogPostHeader() {
   const { frontMatter } = useConfig();
-  const { title, tags } = frontMatter;
+  const { title, tags, description } = frontMatter;
   const date = new Date(frontMatter.date);
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1 style={{ fontWeight: 700, fontSize: 32 }}>{title}</h1>
-      <div style={{ marginBottom: 8 }}>
-        <time dateTime={date.toISOString()}>
-          {date.toLocaleDateString('en', {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-          })}
-        </time>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 8 }}>
+    <Container>
+      <PostDate dateTime={date.toISOString()}>
+        {date.toLocaleDateString('en', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+        })}
+      </PostDate>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+
+      {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 8 }}>
         {tags.map((tag: string) => (
           <span
             key={tag}
@@ -32,7 +33,7 @@ export default function BlogPostHeader() {
             {tag.replaceAll('-', ' ')}
           </span>
         ))}
-      </div>
-    </div>
+      </div> */}
+    </Container>
   );
 }
