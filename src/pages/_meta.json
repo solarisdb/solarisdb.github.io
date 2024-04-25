@@ -12,7 +12,10 @@
     "title": "Home",
     "type": "page",
     "display": "normal",
-    "route": "/"
+    "route": "/",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "showcase": {
     "title": "Showcase",

@@ -17,35 +17,17 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 64px;
+  box-sizing: content-box;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 16px 48px;
+  }
 
   > * {
     flex: 0 0 auto;
+    width: 100%;
   }
 `;
-
-export const HeroContainer = styled.section`
-  margin-top: calc(var(--nextra-navbar-height) * -1);
-  padding-top: var(--nextra-navbar-height) !important;
-  width: 100vw;
-  height: 600px;
-  box-sizing: border-box;
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const HeroContent = styled.div`
-  flex: 0 0 auto;
-  max-width: 1200px;
-  padding: 16px;
-  text-align: center;
-`;
-
-export const HeroTitle = styled.h1`
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 16px;
-`;
-export const HeroDescription = styled.div``;

@@ -6,6 +6,9 @@ import styled, { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
     :root {
         //--nextra-navbar-height: 93px;
+        
+        --primary-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 45% / 1);
+        --primary-low-opacity-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 94% / 1);
     }
   //.nextra-nav-container-blur {
   //    backdrop-filter: none;

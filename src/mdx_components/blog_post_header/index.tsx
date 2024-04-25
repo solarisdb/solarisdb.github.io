@@ -1,7 +1,7 @@
 import { useConfig } from 'nextra-theme-docs';
 import { Container, Title, PostDate, Description } from './styled';
 
-export default function BlogPostHeader() {
+export function BlogPostHeader() {
   const { frontMatter } = useConfig();
   const { title, tags, description } = frontMatter;
   const date = new Date(frontMatter.date);
