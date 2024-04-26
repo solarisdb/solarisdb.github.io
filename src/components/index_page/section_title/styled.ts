@@ -36,7 +36,7 @@ export const Title = styled.div`
 `;
 
 export const Description = styled.div`
-  opacity: 0.8;
+  color: var(--text-secondary);
   ${themeFont('20px', '30px', 400)};
   @media (max-width: 768px) {
     ${themeFont('18px', '28px', 400)};

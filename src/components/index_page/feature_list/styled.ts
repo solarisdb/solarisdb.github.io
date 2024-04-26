@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { themeFont } from '../../../theme';
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(384px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
   gap: 64px 16px;
   width: 100%;
 `;
 
 export const Item = styled.div`
+  flex: 0 1 384px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +75,7 @@ export const Title = styled.div`
 export const Description = styled.div`
   ${themeFont('16px', '24px', 400)};
   text-align: center;
-  opacity: 0.8;
+  color: var(--text-secondary);
 
   @media (max-width: 768px) {
     ${themeFont('16px', '24px', 400)};

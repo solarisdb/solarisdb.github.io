@@ -39,6 +39,6 @@ export const ItemButton = styled.button`
 
 export const ItemBody = styled.div`
   ${themeFont('16px', '24px', 400)};
-  opacity: 0.8;
+  color: var(--text-secondary);
   margin-top: 8px;
 `;

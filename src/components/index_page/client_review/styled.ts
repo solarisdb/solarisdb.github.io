@@ -12,8 +12,6 @@ export const Container = styled.div`
   max-width: 1280px;
 `;
 
-export const Logo = styled(Image)``;
-
 export const Text = styled.div`
   ${themeFont('48px', '60px', 500)};
   @media (max-width: 768px) {
@@ -38,5 +36,5 @@ export const Name = styled.div`
 `;
 export const Position = styled.div`
   ${themeFont('16px', '24px', 400)};
-  opacity: 0.8;
+  color: var(--text-secondary);
 `;

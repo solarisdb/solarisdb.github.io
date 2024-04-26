@@ -37,7 +37,7 @@ export const HeroTitle = styled.h1`
 export const HeroDescription = styled.div`
   max-width: 768px;
   ${themeFont('20px', '30px', 400)};
-  opacity: 0.8;
+  color: var(--text-secondary);
   margin: 0 auto 48px;
   text-align: center;
 

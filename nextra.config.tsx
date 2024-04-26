@@ -2,13 +2,28 @@ import { DocsThemeConfig, useConfig, ThemeSwitch } from 'nextra-theme-docs';
 
 import { useRouter } from 'next/router';
 import styled, { createGlobalStyle } from 'styled-components';
+import { parseToHsl, transparentize } from 'polished';
+
+const primaryColor = '#7F56D9';
 
 const GlobalStyle = createGlobalStyle`
     :root {
         //--nextra-navbar-height: 93px;
         
-        --primary-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 45% / 1);
-        --primary-low-opacity-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 94% / 1);
+        --primary-color: ${primaryColor};
+        --primary-low-opacity-color: ${transparentize(0.85, primaryColor)};
+    }
+    
+    html {
+        --text-main: #101828;
+        --text-secondary: #475467;
+        
+        &[class~='dark'] {
+            --text-main: #fff;
+            --text-secondary: #a3a3a3;
+        }
+        
+        color: var(--text-main);
     }
   //.nextra-nav-container-blur {
   //    backdrop-filter: none;
@@ -51,6 +66,8 @@ const StyledThemeSwitch = styled(ThemeSwitch)`
 `;
 
 const config: DocsThemeConfig = {
+  primaryHue: parseToHsl(primaryColor).hue,
+  primarySaturation: 100 * parseToHsl(primaryColor).saturation,
   logo: <span style={{ fontSize: 24, fontWeight: 700 }}>Solaris</span>,
   docsRepositoryBase: 'https://github.com/solarisdb/solarisdb.github.io/tree/main',
   project: {},
@@ -73,10 +90,6 @@ const config: DocsThemeConfig = {
   },
   toc: {
     backToTop: true,
-  },
-
-  editLink: {
-    component: null,
   },
   banner: {
     key: 'banner-test-101',

@@ -54,7 +54,7 @@ export const Name = styled.div`
 `;
 export const Description = styled.div`
   ${themeFont('16px', '24px', 400)};
-  opacity: 0.8;
+  color: var(--text-secondary);
 `;
 
 export const ImageContainer = styled.div`

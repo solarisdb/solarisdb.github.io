@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { themeFont } from '../../theme';
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -8,8 +9,7 @@ export const Container = styled.div`
 `;
 
 export const PageTitle = styled.h1`
-  font-weight: 700;
-  font-size: 32px;
+  ${themeFont('32px', '42px', 700)};
   padding: 2rem 0;
 `;
 
@@ -46,19 +46,18 @@ export const BlogCardContent = styled.div`
 `;
 
 export const BlogDate = styled.time`
-  font-size: 14px;
-  opacity: 0.8;
+  ${themeFont('14px', '20px', 400)}
+  color: var(--text-secondary);
 `;
 
 export const BlogTitle = styled(Link)`
   display: block;
-  font-size: 20px;
-  font-weight: 600;
+  ${themeFont('20px', '28px', 600)};
   margin-bottom: 4px;
 `;
 
 export const BlockDescription = styled.div`
-  font-size: 15px;
+  ${themeFont('15px', '22px', 400)}
 `;
 
 export const BlogCardButton = styled(Link)`
@@ -67,8 +66,7 @@ export const BlogCardButton = styled(Link)`
   text-align: center;
   border-radius: 6px;
   padding: 6px;
-  font-size: 14px;
-  font-weight: 500;
+  ${themeFont('14px', '20px', 500)};
   background: #f4f4f4;
 
   html[class~='dark'] & {
