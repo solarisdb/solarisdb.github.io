@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { themeFont } from '../../../theme';
 
 export const HeroContainer = styled.section`
   margin-top: calc(var(--nextra-navbar-height) * -1);
@@ -16,23 +17,33 @@ export const HeroContainer = styled.section`
 
 export const HeroContent = styled.div`
   flex: 0 0 auto;
-  max-width: 1280px;
-  padding: 144px 32px 16px;
+  max-width: min(1280px, 100%);
+  padding: 180px 32px 16px;
+
+  @media (max-width: 768px) {
+    padding: 118px 32px 16px;
+  }
 `;
 
 export const HeroTitle = styled.h1`
-  font-size: 72px;
-  font-weight: 600;
+  ${themeFont('60px', '72px', 600)};
   margin-bottom: 24px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    ${themeFont('36px', '44px', 600)};
+  }
 `;
 export const HeroDescription = styled.div`
   max-width: 768px;
-  font-size: 20px;
-  line-height: 1.5;
+  ${themeFont('20px', '30px', 400)};
   opacity: 0.8;
   margin: 0 auto 48px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    ${themeFont('18px', '28px', 400)};
+  }
 `;
 
 export const HeroButtons = styled.div`
@@ -45,10 +56,15 @@ export const HeroButtons = styled.div`
 
 export const HeroButton = styled(Link)`
   border-radius: 8px;
-  padding: 1rem 1.75rem;
+  padding: 16px 28px;
   color: white;
   background: var(--primary-color);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 28px;
+  ${themeFont('18px', '28px', 600)};
+
+  @media (max-width: 768px) {
+    ${themeFont('16px', '24px', 600)};
+    padding: 12px 21px;
+    width: 100%;
+    text-align: center;
+  }
 `;

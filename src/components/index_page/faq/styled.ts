@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { themeFont } from '../../../theme';
 
 export const Container = styled.div`
   width: 100%;
@@ -26,9 +27,7 @@ export const ItemHeader = styled.div`
 
 export const ItemTitle = styled.div`
   flex: 1 1 auto;
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 600;
+  ${themeFont('18px', '28px', 600)};
 `;
 export const ItemButton = styled.button`
   flex: 0 0 auto;
@@ -39,9 +38,7 @@ export const ItemButton = styled.button`
 `;
 
 export const ItemBody = styled.div`
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+  ${themeFont('16px', '24px', 400)};
   opacity: 0.8;
   margin-top: 8px;
 `;

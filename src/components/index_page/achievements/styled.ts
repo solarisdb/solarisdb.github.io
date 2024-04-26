@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { themeFont } from '../../../theme';
 
 export const Container = styled.div`
   display: flex;
@@ -39,22 +40,20 @@ export const ContentItem = styled.div`
 `;
 
 export const Result = styled.div`
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 72px;
+  ${themeFont('60px', '72px', 600)};
   color: var(--primary-color);
   margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    ${themeFont('48px', '60px', 600)};
+  }
 `;
 export const Name = styled.div`
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 28px;
+  ${themeFont('18px', '28px', 500)};
   margin-bottom: 12px;
 `;
 export const Description = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  ${themeFont('16px', '24px', 400)};
   opacity: 0.8;
 `;
 

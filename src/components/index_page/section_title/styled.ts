@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { SectionTitleProps } from './index';
+import { themeFont } from '../../../theme';
 
 export const Container = styled.div<{ $align: Required<SectionTitleProps>['align'] }>`
   display: flex;
@@ -22,22 +23,22 @@ export const Label = styled.div`
   background-color: var(--primary-low-opacity-color);
   color: var(--primary-color);
   padding: 4px 12px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
+  ${themeFont('14px', '20px', 600)};
   margin-bottom: 12px;
 `;
 
 export const Title = styled.div`
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 44px;
   margin-bottom: 20px;
+  ${themeFont('36px', '44px', 600)};
+  @media (max-width: 768px) {
+    ${themeFont('30px', '38px', 600)};
+  }
 `;
 
 export const Description = styled.div`
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
   opacity: 0.8;
+  ${themeFont('20px', '30px', 400)};
+  @media (max-width: 768px) {
+    ${themeFont('18px', '28px', 400)};
+  }
 `;

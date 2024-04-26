@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { themeFont } from '../../../theme';
 
 export const Container = styled.div`
   display: grid;
@@ -50,20 +51,30 @@ export const IconContainer = styled.div`
     border: ${ICON_BORDER}px solid var(--circle-color);
     opacity: 0.5;
   }
+
+  @media (max-width: 768px) {
+    * {
+      font-size: 20px !important;
+    }
+  }
 `;
 
 export const Title = styled.div`
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 30px;
+  ${themeFont('20px', '30px', 500)};
   text-align: center;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    ${themeFont('18px', '28px', 500)};
+  }
 `;
 
 export const Description = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  ${themeFont('16px', '24px', 400)};
   text-align: center;
   opacity: 0.8;
+
+  @media (max-width: 768px) {
+    ${themeFont('16px', '24px', 400)};
+  }
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { themeFont } from '../../../theme';
 
 export const Container = styled.div`
   display: flex;
@@ -14,9 +15,10 @@ export const Container = styled.div`
 export const Logo = styled(Image)``;
 
 export const Text = styled.div`
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 60px;
+  ${themeFont('48px', '60px', 500)};
+  @media (max-width: 768px) {
+    ${themeFont('30px', '38px', 500)};
+  }
 `;
 
 export const Author = styled.div`
@@ -29,17 +31,12 @@ export const Author = styled.div`
 export const Avatar = styled(Image)`
   border-radius: 50%;
   margin-bottom: 16px;
-  background-color: red;
 `;
 export const Name = styled.div`
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 28px;
+  ${themeFont('18px', '28px', 500)};
   margin-bottom: 4px;
 `;
 export const Position = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  ${themeFont('16px', '24px', 400)};
   opacity: 0.8;
 `;

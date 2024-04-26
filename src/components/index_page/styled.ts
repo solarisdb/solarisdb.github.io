@@ -22,7 +22,7 @@ export const Container = styled.div`
   padding: 0 32px 64px;
   box-sizing: content-box;
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 0 16px 48px;
   }
 
