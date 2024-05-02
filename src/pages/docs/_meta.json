@@ -1,4 +1,11 @@
 {
   "index": "",
-  "markdown-demo": ""
+  "---1": {
+    "type": "separator"
+  },
+  "api": "",
+  "expressions": "",
+  "markdown-demo": {
+    "display": "hidden"
+  }
 }

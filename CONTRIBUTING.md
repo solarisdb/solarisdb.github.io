@@ -6,9 +6,7 @@ If you run into any problems or have questions while contributing, you're always
 
 ## Updating content
 
-We use [Nextra](https://nextra.site) to generate documentation and blog pages from a set of Markdown files.
-
-[MDX](https://mdxjs.com) syntax is used to allow rendering [React Components](https://react.dev) inside markdown content. You are free to use components from `src/mdx_components` as well as [built-in Nextra components](https://nextra.site/docs/guide/built-ins) imported from `nextra/components` like so:
+We use [Nextra](https://nextra.site) to generate documentation and blog pages from a set of Markdown files with either `.md` or `.mdx` extensions. [MDX](https://mdxjs.com) syntax is used to allow rendering [React Components](https://react.dev) inside markdown content. You are free to use components from `src/mdx_components` as well as [built-in Nextra components](https://nextra.site/docs/guide/built-ins) imported from `nextra/components` like so:
 
 ```markdown
 import { BlogPostHeader } from '../mdx_components';
@@ -32,8 +30,7 @@ While updating the content you might want to preview your changes before creatin
 
 Documentation for Solaris is stored in `src/pages/docs/` folder.
 
-
-In order to create a new documentation page, you will need to create new `*.mdx` file with `title` inside [Frontmatter fields](https://mdxjs.com/guides/frontmatter):
+In order to create a new documentation page, you will need to create new `*.mdx` or `*.md` file with `title` inside [Frontmatter fields](https://mdxjs.com/guides/frontmatter):
 
 ```markdown
 ---
@@ -84,6 +81,19 @@ Some section text
 Another section text
 ```
 Name of the file will determine the url of the corresponding website page, e.g. for `src/pages/blog/my-blog-post.mdx` url would be `solarisdb.github.io/blog/my-blog-post`.
+
+```markdown
+import { BlogPostHeader } from '../mdx_components';
+import { Callout } from 'nextra/components';
+
+## Hello world!
+
+<BlogPostHeader />
+
+Some plain markdown text goes here.
+
+<Callout>A callout is a short piece of text intended to attract attention.</Callout>
+```
 
 ## Contributing something else
 
