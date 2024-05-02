@@ -1,28 +1,42 @@
 # Source repository for Solaris Website
 
-## Running project locally
+This repository contains the source code and documentation powering the [Solaris website](https://solarisdb.github.io)
 
-#### 1. Install Node
+## Getting started
 
-[Get it here](https://nodejs.org/en/). Make sure that you have installed Node.js version 18.x
+### Installation
 
-#### 2. Install yarn
-```
-  npm install --global yarn
-```
-#### 3. Install dependencies and run development server
+First, make sure that you have installed [Node.js 18.x](https://nodejs.org/en/download) and [yarn](https://yarnpkg.com/getting-started/install).
+
+Then, use yarn to install and load all the necessary dependencies:
 
 ```
- yarn
+ yarn install
+```
+### Running locally
+
+Run the `dev` script to launch the development server (powered by [Next.js](https://nextjs.org)):
+```
  yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it in your favorite browser.
 
-## Project structure
+### Project structure
 
-To be continued...
+- `public`: Static files, like images, can be referenced by your code starting from the base URL (`/`)
+- `out`: Output files that will be served by a static HTTP server
+- `src`: Markdown and the TypeScript/JavaScript files used to generate the website
+    - `pages`: A file-system based router, when a file is added to the `pages` directory, it's automatically available as a route
+    - `components`: React components to be used in custom website pages
+    - `mdx_components`: React components meant to use inside `.mdx` files. [Learn more about MDX](https://mdxjs.com/)
 
-## Contributing
+The Solaris Website is built with [Nextra](https://nextra.site) and uses file-system based routing in order to generate pages from a set of Markdown files.
 
-To be continued...
+### Deployment
+
+The website is deployed via [GitHub Pages](https://pages.github.com) on merges to the `main` branch.
+
+## How to contribute
+
+Check out our [contributing guide](./CONTRIBUTING.md) for detailed instructions on how to make changes to the Solaris website
