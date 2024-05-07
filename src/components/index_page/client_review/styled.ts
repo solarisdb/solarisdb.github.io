@@ -9,11 +9,16 @@ export const Container = styled.div`
   text-align: center;
   gap: 32px;
   padding: 96px 32px;
-  max-width: 1280px;
+  width: 100vw !important;
+  background: var(--bg-secondary);
+
+  > * {
+    max-width: 1280px;
+  }
 `;
 
 export const Text = styled.div`
-  ${themeFont('48px', '60px', 500)};
+  ${themeFont('36px', '44px', 500)};
   @media (max-width: 768px) {
     ${themeFont('30px', '38px', 500)};
   }

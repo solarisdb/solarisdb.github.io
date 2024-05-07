@@ -5,10 +5,12 @@ import { themeFont } from '../../../theme';
 export const HeroContainer = styled.section`
   margin-top: calc(var(--nextra-navbar-height) * -1);
   padding-top: var(--nextra-navbar-height) !important;
-  width: 100vw;
+  width: 100vw !important;
   height: 600px;
   box-sizing: border-box;
   position: relative;
+  background-color: var(--bg-secondary);
+  margin-bottom: 100px;
 
   display: flex;
   align-items: center;

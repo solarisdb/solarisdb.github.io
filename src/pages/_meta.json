@@ -17,11 +17,14 @@
       "layout": "raw"
     }
   },
-  "showcase": {
-    "title": "Showcase",
+  "use-cases": {
+    "title": "Use Cases",
     "type": "page",
     "display": "normal",
-    "route": "/showcase"
+    "theme": {
+      "layout": "default",
+      "typesetting": "article"
+    }
   },
   "docs": {
     "title": "Documentation",
@@ -35,7 +38,7 @@
   },
   "blog": {
     "title": "Blog",
-    "display": "normal",
+    "display": "hidden",
     "type": "page",
     "theme": {
       "layout": "raw",

@@ -1,0 +1,34 @@
+# Solaris Use Cases
+
+## Risk management
+One of the common problems in machine learning risk management data pipelines is obtaining a list of transactions per ID for a given period of time. The time constraints are typically in milliseconds, and the time window for the request may span several weeks or even months, resulting in transaction logs that can be quite large, containing terabytes of raw data. The solution is discussed in [Tecton’s article](https://www.tecton.ai/blog/real-time-aggregation-features-for-machine-learning-part-1/) and addresses the complexities of using RDBMS like MySQL for this purpose. This is where Solaris may shine. It allows grouping records by individual IDs or by groups of IDs. The data extraction speed should be comparable to Kafka or RedPanda, but with retention defined by the users. Compared to data buffers like Kafka and RedPanda, Solaris allows retaining a huge amount of data by replicating it to long-term, low-cost cloud storage solutions like AWS S3. As a result Solaris could be a good alternative to the complex dev-ops based approach of connecting a bunch of tools, proposed by Tecton for solving the problem.
+
+## ML real-time data pipelines
+Operation and ongoing training of ML models requires a huge amount of variably-structured streaming type data of variable kind from text based meta information to images and video streams.  The principal idea of learning and ML training  requires high speed raw data processing and transformation to extract features required for the actual learning.  Production models generally have to be tweaked and adjusted to accommodate new exceptions and threads. That typically requires a re-run of updated transformations on the particular large set of raw data.   
+
+So this process of retraining of models requires a simple solution able to:
+Collect and cost-effectively store the large amounts of data (terabytes/petabytes) 
+Replay the raw data into the high speed transformer, collect the result and refeed it into the feature store preparing for the retraining
+Replay the event streams for model testing 
+
+And most importantly the retraining should be performed without affecting the production environment prior to the newly trained model being tested and ready for the prime time.
+
+Currently the general Database type solutions are used for this which have significant downsides, like: 
+Modifying and structuring data to write into the defined storage with possible loss of original raw data
+Significant cost of database maintenance, storage expansion and operations 
+DevOps involvement to orchestrate the Replay process
+
+Using of Solaris may be illustrated on the following scenarios
+## Scenario 1. Using Solaris as a primary data storage
+In the scenario Solaris is used for storing the input unstructured raw data (stream A) and the partially or well-structured data after the data transformation, which can be a feed for the ML training pipeline:
+
+<img style={{width: '100%', background: 'white', margin: '20px auto'}} src="/use-case/scenario-1.png" />
+
+## Scenario 2. Rebuild ML feeds for the new compute
+In this scenario, Solaris is employed to generate a new version of the transformed data from raw data that has already been stored previously. Solaris is able to replay the raw stream A to build the transformed Stream B'. This capability proves valuable when experimenting with either the model or the data transformation:
+
+![image](/use-case/scenario-2.png)
+
+
+AcquireCloud conversations system
+AcquireCloud is an omni-channel contact center that enables the handling of customer support cases. Each case consists of a series of messages or events related to the subject matter associated with different channels (text, audio, system events, SMS, emails etc.). AcquireCloud operates within a multi-tenant environment, allowing for the storage of billions of such conversations. One of the features offered by AcquireCloud is customizable views of conversations, enabling different parties to see specific events within the same conversation. We developed a service that efficiently stores events and conversations within the database cluster, facilitating easy and effective retrieval. This was the primary use-case where Solaris shines - storing short appendable logs per case basis.
