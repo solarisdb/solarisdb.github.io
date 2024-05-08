@@ -41,8 +41,9 @@ const GlobalStyle = createGlobalStyle`
   .nextra-nav-container {
       & > nav {
           justify-content: flex-start;
+          gap: 16px;
           
-          a, input {
+          a {
               font-size: 16px;
           }
 
