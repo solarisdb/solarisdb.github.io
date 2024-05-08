@@ -14,7 +14,8 @@ export const Hero: FC = () => {
       <HeroContent>
         <HeroTitle>Solaris: Streamlined Data Power</HeroTitle>
         <HeroDescription>
-          High-speed, unlimited-capacity database for real-time insights. perfect for machine learning, IoT, telemetry, and big data applications.
+          High-speed, unlimited-capacity database for real-time insights. perfect for machine
+          learning, IoT, telemetry, and big data applications.
         </HeroDescription>
         <HeroButtons>
           <HeroButton href="/docs">Get Started</HeroButton>

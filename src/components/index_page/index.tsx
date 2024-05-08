@@ -5,7 +5,7 @@ import { SectionTitle } from './section_title';
 import { ClientReview } from './client_review';
 import { FeatureList, FeatureListProps } from './feature_list';
 import { LightningIcon } from '../icons';
-import { FAQ, FAQProps } from './faq';
+import { FAQProps } from './faq';
 import { Achievements } from './achievements';
 
 const getIsScrolled = () => document.documentElement.scrollTop > 0;
@@ -129,12 +129,12 @@ const IndexPage: FC = ({}) => {
         style={{ marginBottom: 64 }}
       />
       <FeatureList items={features} />
-      <ClientReview style={{ marginTop: 96 }} />
+      <ClientReview style={{ marginTop: 64 }} />
       <SectionTitle
         label="Features"
         title="Cutting-edge features for advanced analytics"
         description="Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups."
-        style={{ marginTop: 96, marginBottom: 64 }}
+        style={{ marginTop: 64, marginBottom: 64 }}
       />
       <FeatureList items={additionalFeatures} />
       <SectionTitle
@@ -142,14 +142,14 @@ const IndexPage: FC = ({}) => {
         description="Everything you need to know about the product and billing."
         style={{ marginTop: 180, marginBottom: 64 }}
       />
-      <FAQ items={faqItems} style={{ marginBottom: 64 }} />
-      <SectionTitle
+      {/* <FAQ items={faqItems} style={{ marginBottom: 64 }} /> */}
+      {/* <SectionTitle
         label="Launch faster"
         title="Build something great"
         description="We’ve done all the heavy lifting so you don’t have to — get all the data you need to launch and grow your business faster."
         align="start"
         style={{ marginTop: 96, marginBottom: 64 }}
-      />
+      /> */}
       <Achievements />
     </Container>
   );

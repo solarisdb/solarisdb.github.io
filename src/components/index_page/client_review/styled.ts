@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   text-align: center;
   gap: 32px;
-  padding: 96px 32px;
+  padding: 64px 32px;
   width: 100vw !important;
   background: var(--bg-secondary);
 

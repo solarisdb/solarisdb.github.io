@@ -1,5 +1,6 @@
 ---
 title: Markdown Demo (temp)
+searchable: false
 ---
 
 # Markdown Demo

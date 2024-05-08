@@ -1,3 +1,6 @@
+---
+searchable: false
+---
 # Solaris Use Cases
 
 ## Risk management
@@ -7,27 +10,27 @@ One of the common problems in machine learning risk management data pipelines is
 Operation and ongoing training of ML models requires a huge amount of variably-structured streaming type data of variable kind from text based meta information to images and video streams.  The principal idea of learning and ML training  requires high speed raw data processing and transformation to extract features required for the actual learning.  Production models generally have to be tweaked and adjusted to accommodate new exceptions and threads. That typically requires a re-run of updated transformations on the particular large set of raw data.   
 
 So this process of retraining of models requires a simple solution able to:
-Collect and cost-effectively store the large amounts of data (terabytes/petabytes) 
-Replay the raw data into the high speed transformer, collect the result and refeed it into the feature store preparing for the retraining
-Replay the event streams for model testing 
+1. Collect and cost-effectively store the large amounts of data (terabytes/petabytes)
+2. Replay the raw data into the high speed transformer, collect the result and refeed it into the feature store preparing for the retraining
+3. Replay the event streams for model testing
 
 And most importantly the retraining should be performed without affecting the production environment prior to the newly trained model being tested and ready for the prime time.
 
 Currently the general Database type solutions are used for this which have significant downsides, like: 
-Modifying and structuring data to write into the defined storage with possible loss of original raw data
-Significant cost of database maintenance, storage expansion and operations 
-DevOps involvement to orchestrate the Replay process
+1. Modifying and structuring data to write into the defined storage with possible loss of original raw data
+2. Significant cost of database maintenance, storage expansion and operations
+3. DevOps involvement to orchestrate the Replay process
 
 Using of Solaris may be illustrated on the following scenarios
-## Scenario 1. Using Solaris as a primary data storage
+### Scenario 1. Using Solaris as a primary data storage
 In the scenario Solaris is used for storing the input unstructured raw data (stream A) and the partially or well-structured data after the data transformation, which can be a feed for the ML training pipeline:
 
-<img style={{width: '100%', background: 'white', margin: '20px auto'}} src="/use-case/scenario-1.png" />
+<img style={{width: '100%', background: 'white', margin: '20px auto'}} src="/use-case/scenario-1.svg" />
 
-## Scenario 2. Rebuild ML feeds for the new compute
+### Scenario 2. Rebuild ML feeds for the new compute
 In this scenario, Solaris is employed to generate a new version of the transformed data from raw data that has already been stored previously. Solaris is able to replay the raw stream A to build the transformed Stream B'. This capability proves valuable when experimenting with either the model or the data transformation:
 
-![image](/use-case/scenario-2.png)
+<img style={{width: '100%', background: 'white', margin: '20px auto'}} src="/use-case/scenario-2.svg" />
 
 
 AcquireCloud conversations system
