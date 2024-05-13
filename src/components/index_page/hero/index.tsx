@@ -12,7 +12,7 @@ export const Hero: FC = () => {
   return (
     <HeroContainer>
       <HeroContent>
-        <HeroTitle>Solaris: a high-speed, unlimited-capacity streaming database</HeroTitle>
+        <HeroTitle>High-speed, unlimited-capacity streaming database</HeroTitle>
         <HeroDescription>
           Collecting, storing, and re-supplying large streams of real-time data used for machine
           learning, IoT, telemetry, and other big-data applications.
