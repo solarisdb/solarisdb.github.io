@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { themeFont } from '../../../theme';
+import { IconLabel } from '../icon_label';
 
 export const Container = styled.div`
   display: flex;
@@ -37,6 +38,10 @@ export const ContentItem = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+`;
+
+export const StyledIconLabel = styled(IconLabel)`
+  margin-bottom: 12px;
 `;
 
 export const Result = styled.div`

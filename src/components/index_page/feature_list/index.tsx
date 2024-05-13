@@ -1,6 +1,7 @@
 import { FC, ComponentType } from 'react';
 import { SvgIconProps } from '../../icons/base';
-import { Container, Item, IconContainer, Title, Description } from './styled';
+import { Container, Item, Title, Description } from './styled';
+import { IconLabel } from '../icon_label';
 
 export type FeatureListProps = {
   items: {
@@ -12,11 +13,9 @@ export type FeatureListProps = {
 export const FeatureList: FC<FeatureListProps> = ({ items }) => {
   return (
     <Container>
-      {items.map(({ icon: Icon, title, description }, index) => (
+      {items.map(({ icon, title, description }, index) => (
         <Item key={index}>
-          <IconContainer>
-            <Icon size={24} />
-          </IconContainer>
+          <IconLabel icon={icon} />
           <Title>{title}</Title>
           <Description>{description}</Description>
         </Item>

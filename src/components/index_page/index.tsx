@@ -141,22 +141,23 @@ const IndexPage: FC = ({}) => {
         label="Features"
         title="Empowering Tomorrow's Data Challenges"
         description="Adapting to evolving markets and AI advancements. Simplifying data management for tomorrow's challenges."
+        align="start"
         style={{ marginTop: 64, marginBottom: 64 }}
       />
-      <FeatureList items={additionalFeatures} />
+      {/* <FeatureList items={additionalFeatures} /> */}
       {/* <SectionTitle
         title="Frequently Asked Questions"
         description="Everything you need to know about the product and billing."
         style={{ marginTop: 180, marginBottom: 64 }}
       />
       <FAQ items={faqItems} style={{ marginBottom: 64 }} /> */}
-      <SectionTitle
+      {/* <SectionTitle
         label="Launch faster"
         title="Build something great"
         description="We’ve done all the heavy lifting so you don’t have to — get all the data you need to launch and grow your business faster."
         align="start"
         style={{ marginTop: 96, marginBottom: 64 }}
-      />
+      /> */}
       <Achievements />
     </Container>
   );
