@@ -20,39 +20,39 @@ const getIsScrolled = () => document.documentElement.scrollTop > 0;
 const features: FeatureListProps['items'] = [
   {
     icon: CloudIcon,
-    title: 'Cloud Native',
+    title: 'Born in the Cloud',
     description:
-      'Born in the Cloud: Deploy Solaris effortlessly on AWS, handling billions of streams. Scale compute and storage resources dynamically.',
+      'Deploy Solaris effortlessly on AWS, handling billions of streams. Scale compute and storage resources dynamically.',
   },
   {
     icon: ShieldIcon,
-    title: 'Reliable',
+    title: 'Built for Reliability',
     description:
-      'Built for Reliability: Distribute load across instances and ensure continuity with fail-fast strategies. Replicate data seamlessly to secondary storage like AWS S3.',
+      'Distribute load across instances and ensure continuity with fail-fast strategies. Replicate data seamlessly to secondary storage like AWS S3.',
   },
   {
     icon: LightningIcon,
-    title: 'Fast',
+    title: 'Blazing Speed',
     description:
-      'Blazing Speed: Write and read millions of records per second, with data available within milliseconds. Transparently access streaming data with minimal overhead.',
+      'Write and read millions of records per second, with data available within milliseconds. Transparently access streaming data with minimal overhead.',
   },
   {
     icon: DoubleArrowIcon,
-    title: 'Horizontally Scalable',
+    title: 'Scale at Will',
     description:
-      'Scale at Will: Add storage instances to enhance performance and throughput. Configure resources to prioritize speed, storage, or both.',
+      'Add storage instances to enhance performance and throughput. Configure resources to prioritize speed, storage, or both.',
   },
   {
     icon: OpenSourceIcon,
-    title: 'Open Source',
+    title: 'Community-Powered',
     description:
-      'Community-Powered: Solaris is fully open-source, providing a trusted foundation for data storage solutions. Quick setup for local use or cloud deployment.',
+      'Solaris is fully open-source, providing a trusted foundation for data storage solutions. Quick setup for local use or cloud deployment.',
   },
   {
     icon: ApplauseIcon,
-    title: 'Simple and Affordable',
+    title: 'User-Friendly Efficiency',
     description:
-      'User-Friendly Efficiency: Easily deploy clustering solutions in public or private clouds. Optimize cloud instances and leverage cost-effective long-term storage like AWS S3.',
+      'Easily deploy clustering solutions in public or private clouds. Optimize cloud instances and leverage cost-effective long-term storage like AWS S3.',
   },
 ];
 
@@ -131,7 +131,7 @@ const IndexPage: FC = ({}) => {
       <Hero />
       <SectionTitle
         label="Features"
-        title="Solaris: Empowering Data-driven Future"
+        title="Empowering Data-driven Future"
         description="Born with horizontal scalability and simplicity in mind, Solaris works with billions of streams, petabytes of data, and gigabytes of throughput per second."
         style={{ marginBottom: 64 }}
       />
