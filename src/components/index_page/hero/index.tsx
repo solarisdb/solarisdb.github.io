@@ -12,10 +12,10 @@ export const Hero: FC = () => {
   return (
     <HeroContainer>
       <HeroContent>
-        <HeroTitle>Solaris: Streamlined Data Power</HeroTitle>
+        <HeroTitle>Solaris: a high-speed, unlimited-capacity streaming database</HeroTitle>
         <HeroDescription>
-          High-speed, unlimited-capacity database for real-time insights. perfect for machine
-          learning, IoT, telemetry, and big data applications.
+          Collecting, storing, and re-supplying large streams of real-time data used for machine
+          learning, IoT, telemetry, and other big-data applications.
         </HeroDescription>
         <HeroButtons>
           <HeroButton href="/docs">Get Started</HeroButton>

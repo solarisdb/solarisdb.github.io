@@ -4,7 +4,14 @@ import { Hero } from './hero';
 import { SectionTitle } from './section_title';
 import { ClientReview } from './client_review';
 import { FeatureList, FeatureListProps } from './feature_list';
-import { LightningIcon } from '../icons';
+import {
+  LightningIcon,
+  DoubleArrowIcon,
+  CloudIcon,
+  ShieldIcon,
+  ApplauseIcon,
+  OpenSourceIcon,
+} from '../icons';
 import { FAQProps } from './faq';
 import { Achievements } from './achievements';
 
@@ -12,61 +19,61 @@ const getIsScrolled = () => document.documentElement.scrollTop > 0;
 
 const features: FeatureListProps['items'] = [
   {
-    icon: LightningIcon,
-    title: 'Share team inboxes',
+    icon: CloudIcon,
+    title: 'Cloud Native',
     description:
-      'Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.',
+      'Born in the Cloud: Deploy Solaris effortlessly on AWS, handling billions of streams. Scale compute and storage resources dynamically.',
+  },
+  {
+    icon: ShieldIcon,
+    title: 'Reliable',
+    description:
+      'Built for Reliability: Distribute load across instances and ensure continuity with fail-fast strategies. Replicate data seamlessly to secondary storage like AWS S3.',
   },
   {
     icon: LightningIcon,
-    title: 'Deliver instant answers',
+    title: 'Fast',
     description:
-      'An all-in-one customer service platform that helps you balance everything your customers need to be happy.',
+      'Blazing Speed: Write and read millions of records per second, with data available within milliseconds. Transparently access streaming data with minimal overhead.',
   },
   {
-    icon: LightningIcon,
-    title: 'Manage your team with reports',
+    icon: DoubleArrowIcon,
+    title: 'Horizontally Scalable',
     description:
-      'Measure what matters with Untitled’s easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.',
+      'Scale at Will: Add storage instances to enhance performance and throughput. Configure resources to prioritize speed, storage, or both.',
   },
   {
-    icon: LightningIcon,
-    title: 'Connect with customers',
+    icon: OpenSourceIcon,
+    title: 'Open Source',
     description:
-      'Solve a problem or close a sale in real-time with chat. If no one is available, customers are seamlessly routed to email without confusion.',
+      'Community-Powered: Solaris is fully open-source, providing a trusted foundation for data storage solutions. Quick setup for local use or cloud deployment.',
   },
   {
-    icon: LightningIcon,
-    title: 'Connect the tools you already use',
+    icon: ApplauseIcon,
+    title: 'Simple and Affordable',
     description:
-      'Explore 100+ integrations that make your day-to-day workflow more efficient and familiar. Plus, our extensive developer tools.',
-  },
-  {
-    icon: LightningIcon,
-    title: 'Our people make the difference',
-    description:
-      'We’re an extension of your customer service team, and all of our resources are free. Chat to our friendly team 24/7 when you need help.',
+      'User-Friendly Efficiency: Easily deploy clustering solutions in public or private clouds. Optimize cloud instances and leverage cost-effective long-term storage like AWS S3.',
   },
 ];
 
 const additionalFeatures: FeatureListProps['items'] = [
   {
     icon: LightningIcon,
-    title: 'Share team inboxes',
+    title: 'Adapting to Dynamic Markets',
     description:
-      'Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.',
+      "Meet the demands of today's dynamic market landscape, effortlessly accommodating diverse data sources.",
   },
   {
     icon: LightningIcon,
-    title: 'Deliver instant answers',
+    title: 'Invest in Tomorrow',
     description:
-      'An all-in-one customer service platform that helps you balance everything your customers need to be happy.',
+      "As AI and ML adoption surges, Solaris ensures you're ready for the next decade of technological advancement.",
   },
   {
     icon: LightningIcon,
-    title: 'Manage your team with reports',
+    title: 'Streamlined Data Access',
     description:
-      'Measure what matters with Untitled’s easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.',
+      'Alleviate the burden of storing and accessing large volumes of unstructured data, providing a streamlined solution for your organization.',
   },
 ];
 
@@ -124,16 +131,16 @@ const IndexPage: FC = ({}) => {
       <Hero />
       <SectionTitle
         label="Features"
-        title="Analytics that feels like it’s from the future"
-        description="Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups."
+        title="Solaris: Empowering Data-driven Future"
+        description="Born with horizontal scalability and simplicity in mind, Solaris works with billions of streams, petabytes of data, and gigabytes of throughput per second."
         style={{ marginBottom: 64 }}
       />
       <FeatureList items={features} />
       <ClientReview style={{ marginTop: 64 }} />
       <SectionTitle
         label="Features"
-        title="Cutting-edge features for advanced analytics"
-        description="Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups."
+        title="Empowering Tomorrow's Data Challenges"
+        description="Adapting to evolving markets and AI advancements. Simplifying data management for tomorrow's challenges."
         style={{ marginTop: 64, marginBottom: 64 }}
       />
       <FeatureList items={additionalFeatures} />

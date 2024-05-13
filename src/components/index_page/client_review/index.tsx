@@ -11,13 +11,13 @@ export const ClientReview: FC<{ className?: string; style?: CSSProperties }> = (
     <Container className={className} style={style}>
       <Logo />
       <Text>
-        We’ve been using Solaris to kick start every new project and can’t imagine working without
-        it.
+        Using Solaris for our platform has been a game-changer. It handles our needs, ensuring
+        reliability and speed, making it an essential part of our infrastructure.
       </Text>
       <Author>
         <Avatar src={avatarSrc} alt="Avatar" width={64} height={64} />
         <Name>Bulat Khaibullin</Name>
-        <Position>Software Engineer, Acquire</Position>
+        <Position>Senior Software Engineer, Acquire</Position>
       </Author>
     </Container>
   );
