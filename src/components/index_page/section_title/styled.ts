@@ -10,9 +10,9 @@ export const Container = styled.div<{ $align: Required<SectionTitleProps>['align
     align-items: ${$align};
     text-align: ${$align};
 
-    ${Label} {
-      ${$align !== 'center' && `background: none; padding: 0;`}
-    }
+    // ${Label} {
+    //   ${$align !== 'center' && `background: none; padding: 0;`}
+    // }
   `}
   justify-content: center;
   max-width: 768px;

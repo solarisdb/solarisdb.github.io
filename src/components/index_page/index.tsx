@@ -1,5 +1,5 @@
 import { FC, useState, useLayoutEffect } from 'react';
-import { GlobalStyles, Container } from './styled';
+import { GlobalStyles, Container, SchemaFeatureDigit } from './styled';
 import { Hero } from './hero';
 import { SectionTitle } from './section_title';
 import { ClientReview } from './client_review';
@@ -15,7 +15,8 @@ import {
 import { FAQProps } from './faq';
 import { SchemaSvg } from './schema';
 import { Illustrated } from './illustrated';
-import dirtyWallSrc from './achievements/img.png';
+import firstPictureSrc from './picture-1.svg';
+import secondPictureSrc from './picture-2.svg';
 
 const getIsScrolled = () => document.documentElement.scrollTop > 0;
 
@@ -60,19 +61,19 @@ const features: FeatureListProps['items'] = [
 
 const schemaFeatures: FeatureListProps['items'] = [
   {
-    icon: LightningIcon,
+    icon: () => <SchemaFeatureDigit>1</SchemaFeatureDigit>,
     title: 'Versatile Data Intake',
     description:
       'Receive data records from diverse sources, handling gigabytes of data per second with ease. Multiple streams facilitate data separation for efficient retrieval.',
   },
   {
-    icon: LightningIcon,
+    icon: () => <SchemaFeatureDigit>2</SchemaFeatureDigit>,
     title: 'Schema-less Flexibility',
     description:
       "Schema-less design, allowing for unrestricted data record handling. Utilize 'compute' for in-house processing or offload heavier transformations to external cloud services like Databricks.",
   },
   {
-    icon: LightningIcon,
+    icon: () => <SchemaFeatureDigit>3</SchemaFeatureDigit>,
     title: 'Efficient Querying',
     description:
       'Use query language for effortless data retrieval. Access both raw and transformed data stored within Solaris streams, empowering applications such as machine learning, data management, and analytics.',
@@ -185,7 +186,13 @@ const IndexPage: FC = ({}) => {
     <Container>
       <GlobalStyles $scrolled={scrolled} />
       <Hero />
-      <SchemaSvg style={{ marginTop: 96, marginBottom: 64 }} />
+      <SectionTitle
+        label="Data Scheme"
+        title="Harnessing Solaris for Seamless Data Integration"
+        description="Optimized Operations, Flexible Processing, and Streamlined Querying"
+        style={{ marginBottom: 96, marginTop: 64 }}
+      />
+      <SchemaSvg style={{ marginBottom: 64 }} />
       <FeatureList items={schemaFeatures} />
       <SectionTitle
         label="Use Cases"
@@ -194,7 +201,7 @@ const IndexPage: FC = ({}) => {
         style={{ marginBottom: 64, marginTop: 96 }}
         align="end"
       />
-      <Illustrated reverse imageProps={{ fill: true, src: dirtyWallSrc, alt: '' }}>
+      <Illustrated reverse imageProps={{ fill: true, src: firstPictureSrc, alt: '' }}>
         <FeatureList items={useCases} style={{ ['--feature-width' as any]: '320px' }} />
       </Illustrated>
       <SectionTitle
@@ -212,7 +219,7 @@ const IndexPage: FC = ({}) => {
         align="start"
         style={{ marginTop: 64, marginBottom: 64 }}
       />
-      <Illustrated imageProps={{ fill: true, src: dirtyWallSrc, alt: '' }}>
+      <Illustrated imageProps={{ fill: true, src: secondPictureSrc, alt: '' }}>
         <FeatureList items={futureFeatures} style={{ ['--feature-width' as any]: '320px' }} />
       </Illustrated>
       {/* <SectionTitle

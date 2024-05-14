@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import styled, { createGlobalStyle } from 'styled-components';
 import { parseToHsl, transparentize } from 'polished';
 
-const primaryColor = '#0257ff';
+const primaryColor = '#0079DB';
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -18,13 +18,13 @@ const GlobalStyle = createGlobalStyle`
         --text-main: #101828;
         --text-secondary: #475467;
         --logo-color: #162427;
-        --bg-secondary: #F9FAFB;
+        --bg-secondary: ${transparentize(0.95, primaryColor)};
         
         &[class~='dark'] {
             --text-main: #fff;
             --text-secondary: #a3a3a3;
             --logo-color: #ffffff;
-            --bg-secondary: #060504;
+            --bg-secondary: ${transparentize(0.95, primaryColor)};
         }
         
         color: var(--text-main);

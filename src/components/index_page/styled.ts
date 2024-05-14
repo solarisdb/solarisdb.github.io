@@ -36,3 +36,11 @@ export const StyledSchemaSvgContainer = styled.svg`
   max-width: 870px;
   width: 100%;
 `;
+
+export const SchemaFeatureDigit = styled.div`
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  text-align: center;
+  font-weight: 600;
+`;

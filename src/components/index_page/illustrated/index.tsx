@@ -22,7 +22,7 @@ export const Illustrated: FC<IllustratedProps> = ({
   style,
 }) => {
   return (
-    <Container className={className} style={style}>
+    <Container $reverse={reverse} className={className} style={style}>
       <div style={{ width: toPercentage(contentRatio) }}>{children}</div>
       <ImageContainer style={{ width: toPercentage(1 - contentRatio) }}>
         <Image {...imageProps} />
