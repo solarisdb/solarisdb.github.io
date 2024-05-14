@@ -8,10 +8,14 @@ export const Container = styled.div`
   justify-content: center;
   gap: 64px 16px;
   width: 100%;
+
+  @media (max-width: 1024px) {
+    justify-content: space-around;
+  }
 `;
 
 export const Item = styled.div`
-  flex: 0 1 384px;
+  flex: 0 1 var(--feature-width, 384px);
   display: flex;
   flex-direction: column;
   align-items: center;

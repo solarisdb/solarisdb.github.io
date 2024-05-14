@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import { themeFont } from '../../../theme';
-import { IconLabel } from '../icon_label';
 
-export const Container = styled.div`
+export const Container = styled.div<{ $reverse?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 96px;
-
+  flex-direction: ${({ $reverse }) => ($reverse ? 'row-reverse' : 'row')};
   @media (max-width: 1024px) {
     flex-wrap: wrap;
     gap: 48px;
+    flex-direction: row;
 
     > div {
       width: 100%;
@@ -40,10 +40,6 @@ export const ContentItem = styled.div`
   text-align: center;
 `;
 
-export const StyledIconLabel = styled(IconLabel)`
-  margin-bottom: 12px;
-`;
-
 export const Result = styled.div`
   ${themeFont('60px', '72px', 600)};
   color: var(--primary-color);
@@ -60,8 +56,4 @@ export const Name = styled.div`
 export const Description = styled.div`
   ${themeFont('16px', '24px', 400)};
   color: var(--text-secondary);
-`;
-
-export const ImageContainer = styled.div`
-  width: 50%;
 `;

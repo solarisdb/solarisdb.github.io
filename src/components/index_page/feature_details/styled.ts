@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export const Container = styled.div<{ $reverse?: boolean }>`
   display: flex;
-  direction: ${({ $reverse }) => ($reverse ? 'row-reverse' : 'row')};
+  flex-direction: ${({ $reverse }) => ($reverse ? 'row-reverse' : 'row')};
   align-items: center;
   justify-content: center;
   gap: 96px;

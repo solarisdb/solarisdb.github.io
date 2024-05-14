@@ -13,7 +13,9 @@ import {
   OpenSourceIcon,
 } from '../icons';
 import { FAQProps } from './faq';
-import { Achievements } from './achievements';
+import { SchemaSvg } from './schema';
+import { Illustrated } from './illustrated';
+import dirtyWallSrc from './achievements/img.png';
 
 const getIsScrolled = () => document.documentElement.scrollTop > 0;
 
@@ -56,24 +58,24 @@ const features: FeatureListProps['items'] = [
   },
 ];
 
-const additionalFeatures: FeatureListProps['items'] = [
+const schemaFeatures: FeatureListProps['items'] = [
   {
     icon: LightningIcon,
-    title: 'Adapting to Dynamic Markets',
+    title: 'Versatile Data Intake',
     description:
-      "Meet the demands of today's dynamic market landscape, effortlessly accommodating diverse data sources.",
+      'Receive data records from diverse sources, handling gigabytes of data per second with ease. Multiple streams facilitate data separation for efficient retrieval.',
   },
   {
     icon: LightningIcon,
-    title: 'Invest in Tomorrow',
+    title: 'Schema-less Flexibility',
     description:
-      "As AI and ML adoption surges, Solaris ensures you're ready for the next decade of technological advancement.",
+      "Schema-less design, allowing for unrestricted data record handling. Utilize 'compute' for in-house processing or offload heavier transformations to external cloud services like Databricks.",
   },
   {
     icon: LightningIcon,
-    title: 'Streamlined Data Access',
+    title: 'Efficient Querying',
     description:
-      'Alleviate the burden of storing and accessing large volumes of unstructured data, providing a streamlined solution for your organization.',
+      'Use query language for effortless data retrieval. Access both raw and transformed data stored within Solaris streams, empowering applications such as machine learning, data management, and analytics.',
   },
 ];
 
@@ -110,6 +112,60 @@ const faqItems: FAQProps['items'] = [
   },
 ];
 
+const useCases: FeatureListProps['items'] = [
+  {
+    icon: LightningIcon,
+    title: 'ML Data Pipelines',
+    description:
+      'Streamline ML data storage and transformation, ensuring agility in workflows and seamless integration with compute tools.',
+  },
+  {
+    icon: LightningIcon,
+    title: 'Backup Storage for Kafka Streams',
+    description:
+      'Ensure data durability and accessibility with Solaris as a reliable long-term storage solution for Kafka backups, facilitating seamless data replay.',
+  },
+  {
+    icon: LightningIcon,
+    title: 'Data Stream Storage',
+    description:
+      'Efficiently store and analyze vast data streams, simplifying data management and enabling straightforward retrieval for analysis.',
+  },
+  {
+    icon: LightningIcon,
+    title: 'Application and Audit Logs',
+    description:
+      'Write and read data at gigabytes per second, ensuring fast and efficient logging. Ideal for storing application and audit logs without compromising speed',
+  },
+];
+
+const futureFeatures: FeatureListProps['items'] = [
+  {
+    icon: LightningIcon,
+    title: 'Adapting to Dynamic Markets',
+    description:
+      "Meet the demands of today's dynamic market landscape, effortlessly accommodating diverse data sources.",
+  },
+  {
+    icon: LightningIcon,
+    title: 'Invest in Tomorrow',
+    description:
+      "As AI and ML adoption surges, Solaris ensures you're ready for the next decade of technological advancement.",
+  },
+  {
+    icon: LightningIcon,
+    title: 'Streamlined Data Access',
+    description:
+      'Alleviate the burden of storing and accessing large volumes of unstructured data, providing a streamlined solution for your organization.',
+  },
+  {
+    icon: LightningIcon,
+    title: 'Unleash Your Data Potential',
+    description:
+      'Seamlessly integrate, analyze, and derive insights from diverse data sources, empowering your organization to make informed decisions and drive innovation.',
+  },
+];
+
 const IndexPage: FC = ({}) => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -129,11 +185,23 @@ const IndexPage: FC = ({}) => {
     <Container>
       <GlobalStyles $scrolled={scrolled} />
       <Hero />
+      <SchemaSvg style={{ marginTop: 96, marginBottom: 64 }} />
+      <FeatureList items={schemaFeatures} />
+      <SectionTitle
+        label="Use Cases"
+        title="Versatile Solutions for Every Scenario"
+        description="From ML Data Pipelines to Stream Storage, Solaris is Your Reliable Partner"
+        style={{ marginBottom: 64, marginTop: 96 }}
+        align="end"
+      />
+      <Illustrated reverse imageProps={{ fill: true, src: dirtyWallSrc, alt: '' }}>
+        <FeatureList items={useCases} style={{ ['--feature-width' as any]: '320px' }} />
+      </Illustrated>
       <SectionTitle
         label="Features"
         title="Empowering Data-driven Future"
         description="Born with horizontal scalability and simplicity in mind, Solaris works with billions of streams, petabytes of data, and gigabytes of throughput per second."
-        style={{ marginBottom: 64 }}
+        style={{ marginBottom: 64, marginTop: 96 }}
       />
       <FeatureList items={features} />
       <ClientReview style={{ marginTop: 64 }} />
@@ -144,21 +212,15 @@ const IndexPage: FC = ({}) => {
         align="start"
         style={{ marginTop: 64, marginBottom: 64 }}
       />
-      {/* <FeatureList items={additionalFeatures} /> */}
+      <Illustrated imageProps={{ fill: true, src: dirtyWallSrc, alt: '' }}>
+        <FeatureList items={futureFeatures} style={{ ['--feature-width' as any]: '320px' }} />
+      </Illustrated>
       {/* <SectionTitle
         title="Frequently Asked Questions"
         description="Everything you need to know about the product and billing."
         style={{ marginTop: 180, marginBottom: 64 }}
-      />
-      <FAQ items={faqItems} style={{ marginBottom: 64 }} /> */}
-      {/* <SectionTitle
-        label="Launch faster"
-        title="Build something great"
-        description="We’ve done all the heavy lifting so you don’t have to — get all the data you need to launch and grow your business faster."
-        align="start"
-        style={{ marginTop: 96, marginBottom: 64 }}
       /> */}
-      <Achievements />
+      {/* <FAQ items={faqItems} style={{ marginBottom: 64 }} /> */}
     </Container>
   );
 };
