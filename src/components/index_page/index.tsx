@@ -190,7 +190,7 @@ const IndexPage: FC = ({}) => {
         label="Data Scheme"
         title="Harnessing Solaris for Seamless Data Integration"
         description="Optimized Operations, Flexible Processing, and Streamlined Querying"
-        style={{ marginBottom: 96, marginTop: 64 }}
+        style={{ marginBottom: 96, marginTop: 64, maxWidth: 1024 }}
       />
       <SchemaSvg style={{ marginBottom: 64 }} />
       <FeatureList items={schemaFeatures} />
