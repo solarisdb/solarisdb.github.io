@@ -31,6 +31,7 @@ export const HeroTitle = styled.h1`
   ${themeFont('60px', '72px', 600)};
   margin-bottom: 24px;
   text-align: center;
+  max-width: 1024px;
 
   @media (max-width: 768px) {
     ${themeFont('36px', '44px', 600)};

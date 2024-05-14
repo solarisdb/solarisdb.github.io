@@ -13,14 +13,14 @@ export const Container = styled.div`
   background: var(--bg-secondary);
 
   > * {
-    max-width: 1280px;
+    max-width: 1024px;
   }
 `;
 
 export const Text = styled.div`
-  ${themeFont('36px', '44px', 500)};
+  ${themeFont('30px', '38px', 500)};
   @media (max-width: 768px) {
-    ${themeFont('30px', '38px', 500)};
+    ${themeFont('24px', '32px', 500)};
   }
 `;
 

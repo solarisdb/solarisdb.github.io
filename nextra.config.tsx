@@ -66,6 +66,9 @@ const GlobalStyle = createGlobalStyle`
   .nextra-sidebar-container > :last-child {
       display: none;
   }
+  .nextra-search + button {
+      margin-left: -8px;
+  }
 `;
 
 const StyledThemeSwitch = styled(ThemeSwitch)`
