@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
         --text-secondary: #475467;
         --logo-color: #162427;
         --bg-secondary: ${transparentize(0.95, primaryColor)};
+        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         
         &[class~='dark'] {
             --text-main: #fff;
@@ -148,6 +149,12 @@ const config: DocsThemeConfig = {
         <meta property="og:site_name" content="Solaris" />
         {frontMatter.image ? <meta property="og:image" content={frontMatter.image} /> : null}
         {frontMatter.video ? <meta property="og:video" content={frontMatter.video} /> : null}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
       </>
     );
   },
