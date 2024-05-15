@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { themeFont } from '../../../theme';
+import waveImage from './wave.svg';
 
 export const HeroContainer = styled.section`
   margin-top: calc(var(--nextra-navbar-height) * -1);
@@ -13,15 +14,25 @@ export const HeroContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-image: url('${waveImage.src}');
+  background-repeat: no-repeat;
+  background-position: center 180px;
+  background-size: max(100%, 1660px) 562px;
+
+  @media (max-width: 768px) {
+    background-position: center 360px;
+    background-size: max(100%, 830px) 281px;
+  }
 `;
 
 export const HeroContent = styled.div`
   flex: 0 0 auto;
   max-width: min(1280px, 100%);
-  padding: 180px 32px 16px;
+  padding: 124px 32px 420px;
 
   @media (max-width: 768px) {
-    padding: 118px 32px 16px;
+    padding: 118px 32px 180px;
   }
 `;
 
@@ -69,3 +80,16 @@ export const HeroButton = styled(Link)`
     text-align: center;
   }
 `;
+
+// export const WaveImage = styled.img.attrs({
+//   src: waveImage.src,
+// })`
+//   position: absolute;
+//   pointer-events: none;
+//   top: 136px;
+//   left: 50%;
+//   transform: translate(-50%, 0);
+//   height: calc(100% - 136px);
+//   width: 100%;
+//   object-fit: fill;
+// `;
