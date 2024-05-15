@@ -17,19 +17,19 @@ export const HeroContainer = styled.section`
 
   background-image: url('${waveImage.src}');
   background-repeat: no-repeat;
-  background-position: center 180px;
-  background-size: max(100%, 1660px) 562px;
+  background-position: center 104px;
+  background-size: max(100%, 1440px) 665px;
 
   @media (max-width: 768px) {
-    background-position: center 360px;
-    background-size: max(100%, 830px) 281px;
+    background-position: center 280px;
+    background-size: max(100%, 720px) 382px;
   }
 `;
 
 export const HeroContent = styled.div`
   flex: 0 0 auto;
   max-width: min(1280px, 100%);
-  padding: 124px 32px 420px;
+  padding: 124px 32px 320px;
 
   @media (max-width: 768px) {
     padding: 118px 32px 180px;
