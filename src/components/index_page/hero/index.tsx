@@ -18,7 +18,12 @@ export const Hero: FC = () => {
           learning, IoT, telemetry, and other big-data applications.
         </HeroDescription>
         <HeroButtons>
-          <HeroButton href="/docs">Get Started</HeroButton>
+          <HeroButton href="/docs" data-type="secondary">
+            Learn more
+          </HeroButton>
+          <HeroButton href="/docs" data-type="primary">
+            Get started
+          </HeroButton>
         </HeroButtons>
       </HeroContent>
     </HeroContainer>

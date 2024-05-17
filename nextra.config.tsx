@@ -18,14 +18,18 @@ const GlobalStyle = createGlobalStyle`
         --text-main: #101828;
         --text-secondary: #475467;
         --logo-color: #162427;
-        --bg-secondary: ${transparentize(0.95, primaryColor)};
+        --bg-color: #ffffff;
+        --bg-secondary: ${transparentize(0.96, primaryColor)};
+        --border-color: #d0d5dd;
         font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         
         &[class~='dark'] {
             --text-main: #fff;
             --text-secondary: #a3a3a3;
             --logo-color: #ffffff;
-            --bg-secondary: ${transparentize(0.95, primaryColor)};
+            --bg-color: #111111;
+            --bg-secondary: ${transparentize(0.96, primaryColor)};
+            --border-color: #2f2a22;
         }
         
         color: var(--text-main);

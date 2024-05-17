@@ -6,3 +6,4 @@ export * from './cloud';
 export * from './shield';
 export * from './applause';
 export * from './open_source';
+export * from './arrow_right';

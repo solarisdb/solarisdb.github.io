@@ -12,7 +12,6 @@
     "title": "Home",
     "type": "page",
     "display": "normal",
-    "route": "/",
     "theme": {
       "layout": "raw"
     }

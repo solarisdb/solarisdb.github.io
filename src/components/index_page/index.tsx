@@ -1,5 +1,5 @@
 import { FC, useState, useLayoutEffect } from 'react';
-import { GlobalStyles, Container, SchemaFeatureDigit } from './styled';
+import { GlobalStyles, Container, SchemaFeatureDigit, BottomSection, BottomWave } from './styled';
 import { Hero } from './hero';
 import { SectionTitle } from './section_title';
 import { ClientReview } from './client_review';
@@ -14,9 +14,8 @@ import {
 } from '../icons';
 import { FAQProps } from './faq';
 import { SchemaSvg } from './schema';
-import { Illustrated } from './illustrated';
-import firstPictureSrc from './picture-1.svg';
-import secondPictureSrc from './picture-2.svg';
+import { Aside } from './aside';
+import { HeroButton, HeroButtons } from './hero/styled';
 
 const getIsScrolled = () => document.documentElement.scrollTop > 0;
 
@@ -119,24 +118,28 @@ const useCases: FeatureListProps['items'] = [
     title: 'ML Data Pipelines',
     description:
       'Streamline ML data storage and transformation, ensuring agility in workflows and seamless integration with compute tools.',
+    link: '/use-cases',
   },
   {
     icon: LightningIcon,
     title: 'Backup Storage for Kafka Streams',
     description:
       'Ensure data durability and accessibility with Solaris as a reliable long-term storage solution for Kafka backups, facilitating seamless data replay.',
+    link: '/use-cases',
   },
   {
     icon: LightningIcon,
     title: 'Data Stream Storage',
     description:
       'Efficiently store and analyze vast data streams, simplifying data management and enabling straightforward retrieval for analysis.',
+    link: '/use-cases',
   },
   {
     icon: LightningIcon,
     title: 'Application and Audit Logs',
     description:
       'Write and read data at gigabytes per second, ensuring fast and efficient logging. Ideal for storing application and audit logs without compromising speed',
+    link: '/use-cases',
   },
 ];
 
@@ -187,32 +190,48 @@ const IndexPage: FC = ({}) => {
       <GlobalStyles $scrolled={scrolled} />
       <Hero />
       <SectionTitle
-        label="Data Scheme"
-        title="Harnessing Solaris for Seamless Data Integration"
+        label="Overview"
+        title="Solaris for Seamless Data Integration"
         description="Optimized Operations, Flexible Processing, and Streamlined Querying"
-        style={{ marginBottom: 96, marginTop: 64, maxWidth: 1024 }}
+        style={{ marginBottom: 64, marginTop: 96, maxWidth: 1024 }}
       />
       <SchemaSvg style={{ marginBottom: 64 }} />
       <FeatureList items={schemaFeatures} />
-      <SectionTitle
-        label="Use Cases"
-        title="Versatile Solutions for Every Scenario"
-        description="From ML Data Pipelines to Stream Storage, Solaris is Your Reliable Partner"
-        style={{ marginBottom: 64, marginTop: 96 }}
-        align="end"
-      />
-      <Illustrated reverse imageProps={{ fill: true, src: firstPictureSrc, alt: '' }}>
-        <FeatureList items={useCases} style={{ ['--feature-width' as any]: '320px' }} />
-      </Illustrated>
+      <Aside contentPosition="right" style={{ marginTop: 96 }}>
+        <SectionTitle
+          label="Use Cases"
+          title="Versatile Solutions for Every Scenario"
+          description="From ML Data Pipelines to Stream Storage, Solaris is Your Reliable Partner"
+          style={{ marginBottom: 64 }}
+          align="end"
+        />
+        <FeatureList items={useCases} />
+      </Aside>
+      <ClientReview style={{ marginTop: 64 }} />
       <SectionTitle
         label="Features"
         title="Empowering Data-driven Future"
         description="Born with horizontal scalability and simplicity in mind, Solaris works with billions of streams, petabytes of data, and gigabytes of throughput per second."
-        style={{ marginBottom: 64, marginTop: 96 }}
+        style={{ marginBottom: 96, marginTop: 96 }}
       />
-      <FeatureList items={features} />
-      <ClientReview style={{ marginTop: 64 }} />
-      <SectionTitle
+      <FeatureList items={features} style={{ marginBottom: 96 }} />
+      <BottomSection>
+        <SectionTitle
+          title="Start right now"
+          description="Meet tomorrow's challenges. Adapt to evolving markets and AI advancements. "
+          style={{ marginBottom: 40 }}
+        />
+        <HeroButtons>
+          <HeroButton href="/docs" data-type="secondary">
+            Learn more
+          </HeroButton>
+          <HeroButton href="/docs" data-type="primary">
+            Get started
+          </HeroButton>
+        </HeroButtons>
+      </BottomSection>
+      <BottomWave />
+      {/* <SectionTitle
         label="Features"
         title="Empowering Tomorrow's Data Challenges"
         description="Adapting to evolving markets and AI advancements. Simplifying data management for tomorrow's challenges."
@@ -222,7 +241,7 @@ const IndexPage: FC = ({}) => {
       <Illustrated imageProps={{ fill: true, src: secondPictureSrc, alt: '' }}>
         <FeatureList items={futureFeatures} style={{ ['--feature-width' as any]: '320px' }} />
       </Illustrated>
-      {/* <SectionTitle
+      <SectionTitle
         title="Frequently Asked Questions"
         description="Everything you need to know about the product and billing."
         style={{ marginTop: 180, marginBottom: 64 }}

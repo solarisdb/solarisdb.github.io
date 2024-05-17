@@ -24,7 +24,7 @@ export const Label = styled.div`
   color: var(--primary-color);
   padding: 4px 12px;
   ${themeFont('14px', '20px', 600)};
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 `;
 
 export const Title = styled.div`

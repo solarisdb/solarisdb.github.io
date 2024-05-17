@@ -3,13 +3,15 @@ import Image from 'next/image';
 import { themeFont } from '../../../theme';
 
 export const Container = styled.div`
+  margin: 0 calc(-1 * var(--index-page-side-padding));
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 32px;
   padding: 64px 32px;
-  width: 100vw !important;
+  max-width: unset;
+  align-self: stretch;
   background: var(--bg-secondary);
 
   > * {

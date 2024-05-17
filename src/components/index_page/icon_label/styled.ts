@@ -10,7 +10,8 @@ export const IconContainer = styled.div<{ $withBorder: boolean }>`
   color: var(--primary-color);
   margin-bottom: 20px;
 
-  * {
+  &,
+  & * {
     font-size: 24px !important;
   }
 
@@ -30,8 +31,8 @@ export const IconContainer = styled.div<{ $withBorder: boolean }>`
 
   &:before {
     background: var(--circle-color);
-    width: calc(100% - 2 * ${ICON_BORDER});
-    height: calc(100% - 2 * ${ICON_BORDER});
+    width: calc(100% - ${ICON_BORDER});
+    height: calc(100% - ${ICON_BORDER});
   }
 
   &:after {
