@@ -11,13 +11,14 @@ export const Content = styled.div`
 `;
 
 export const Container = styled.div<{ ['data-position']?: 'left' | 'right' }>`
-  margin: 0 calc(-1 * var(--index-page-side-padding));
-  padding: 190px var(--index-page-side-padding) 0;
+  margin: 0 calc(-1 * var(--index-page-side-padding)) -240px;
+  padding: 190px var(--index-page-side-padding) 240px;
   max-width: unset;
   align-self: stretch;
   position: relative;
   background-repeat: no-repeat;
-  background-size: max(100%, 1440px) 960px;
+  background-size: max(100%, 1440px) 1160px;
+  z-index: 1;
 
   &[data-position='left'] {
     background-image: url('${waveRight.src}');
