@@ -31,8 +31,8 @@ export const IconContainer = styled.div<{ $withBorder: boolean }>`
 
   &:before {
     background: var(--circle-color);
-    width: calc(100% - ${ICON_BORDER});
-    height: calc(100% - ${ICON_BORDER});
+    width: calc(100% - 2 * ${ICON_BORDER});
+    height: calc(100% - 2 * ${ICON_BORDER});
   }
 
   &:after {
