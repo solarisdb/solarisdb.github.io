@@ -16,6 +16,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <NextThemeProvider attribute="class" disableTransitionOnChange>
       <StyledThemeProvider>
+        {/* @ts-ignore */}
         <GlobalStyles />
         <Component {...pageProps} />
       </StyledThemeProvider>
