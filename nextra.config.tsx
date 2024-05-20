@@ -1,80 +1,9 @@
 import { DocsThemeConfig, useConfig, ThemeSwitch } from 'nextra-theme-docs';
 
 import { useRouter } from 'next/router';
-import styled, { createGlobalStyle } from 'styled-components';
-import { parseToHsl, transparentize } from 'polished';
-
-const primaryColor = '#0079DB';
-
-const GlobalStyle = createGlobalStyle`
-    :root {
-        //--nextra-navbar-height: 93px;
-        
-        --primary-color: ${primaryColor};
-        --primary-low-opacity-color: ${transparentize(0.85, primaryColor)};
-    }
-    
-    html {
-        --text-main: #101828;
-        --text-secondary: #475467;
-        --logo-color: #162427;
-        --bg-color: #ffffff;
-        --bg-secondary: ${transparentize(0.96, primaryColor)};
-        --border-color: #d0d5dd;
-        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-        
-        &[class~='dark'] {
-            --text-main: #fff;
-            --text-secondary: #a3a3a3;
-            --logo-color: #ffffff;
-            --bg-color: #111111;
-            --bg-secondary: ${transparentize(0.96, primaryColor)};
-            --border-color: #2f2a22;
-        }
-        
-        color: var(--text-main);
-    }
-  //.nextra-nav-container-blur {
-  //    backdrop-filter: none;
-  //    background: #fff;
-  //    
-  //    html[class~=dark] & {
-  //        background: #111 !important;
-  //    }
-  //}
-  
-  .nextra-nav-container {
-      & > nav {
-          justify-content: flex-start;
-          gap: 16px;
-          
-          a {
-              font-size: 16px;
-          }
-
-          & > :first-child {
-              @media screen and (min-width: 768px) {
-                  margin-right: 1.5rem;
-              }
-          }
-      }
-
-      .nextra-search {
-          margin-left: auto;
-      }
-
-      & ~ footer {
-          background: inherit !important;
-      }
-  }
-  
-  .nextra-sidebar-container > :last-child {
-      display: none;
-  }
-  .nextra-search + button {
-      margin-left: -8px;
-  }
-`;
+import styled from 'styled-components';
+import { parseToHsl } from 'polished';
+import { PRIMARY_COLOR } from './src/theme';
 
 const StyledThemeSwitch = styled(ThemeSwitch)`
   span {
@@ -88,8 +17,8 @@ const LogoSvg = styled.svg`
 `;
 
 const config: DocsThemeConfig = {
-  primaryHue: parseToHsl(primaryColor).hue,
-  primarySaturation: 100 * parseToHsl(primaryColor).saturation,
+  primaryHue: parseToHsl(PRIMARY_COLOR).hue,
+  primarySaturation: 100 * parseToHsl(PRIMARY_COLOR).saturation,
   logo: (
     <LogoSvg viewBox="0 0 139 31">
       <path d="M25.3708 18.8365C23.2609 20.1476 20.9314 21.0003 18.5763 21.3803C20.8051 20.5236 22.8166 19.2464 24.4704 17.6642C26.1267 16.084 27.4272 14.2043 28.3057 12.1931C29.1822 10.1795 29.6346 8.03756 29.6605 5.9426C29.6807 4.47123 29.4865 3.02698 29.1122 1.65151C28.6558 1.24968 28.0593 1.00364 27.4038 1.00081C27.6765 2.68787 27.734 4.38949 27.5753 6.04984C27.3277 8.61624 26.573 11.0831 25.3991 13.2707C24.2277 15.4612 22.6362 17.3643 20.7869 18.8709C22.289 17.0143 23.3925 14.9027 24.0334 12.7054C24.6776 10.5085 24.8642 8.23059 24.6194 6.04984C24.4174 4.27092 23.9246 2.56202 23.1958 1.00041H20.8695C20.884 1.03238 20.901 1.06313 20.9156 1.0951C21.9843 3.44176 22.5641 5.95515 22.641 8.43657C22.7215 10.9192 22.295 13.3634 21.4469 15.5927C21.8196 13.2339 21.7192 10.8532 21.1758 8.63C20.6356 6.40514 19.6579 4.33931 18.3554 2.57294C17.9438 2.01652 17.4971 1.49369 17.0261 1H13.7856C15.3945 2.335 16.7675 3.9051 17.8354 5.62858C19.1465 7.73852 19.9991 10.0682 20.379 12.4233C19.5224 10.1944 18.2453 8.18284 16.6631 6.52897C15.0829 4.87267 13.2033 3.57207 11.1922 2.69353C9.17869 1.81703 7.03688 1.36461 4.942 1.33871C3.47028 1.31848 2.02649 1.51271 0.65108 1.88703C0.249262 2.3435 0.0032339 2.93997 0.000401341 3.59554C1.68739 3.32279 3.38895 3.26533 5.04923 3.42396C7.61553 3.67161 10.0823 4.42632 12.2698 5.60026C14.4602 6.77177 16.3633 8.36332 17.8698 10.2127C16.0132 8.71053 13.9018 7.607 11.7045 6.96601C9.50767 6.32178 7.22989 6.13523 5.04923 6.38005C3.27039 6.58198 1.56155 7.07486 0 7.80367V10.1301C0.0315628 10.1155 0.0627182 10.0985 0.0946857 10.084C2.44126 9.01524 4.95454 8.43535 7.43586 8.35847C9.91839 8.27794 12.3625 8.70446 14.5917 9.55264C12.233 9.17994 9.85284 9.2803 7.62928 9.82377C5.40451 10.364 3.33877 11.3417 1.57247 12.6443C1.01607 13.0558 0.493269 13.5026 0 13.9736V17.2138C1.33494 15.6048 2.90498 14.2318 4.62839 13.1639C6.73824 11.8528 9.06781 11.0001 11.4229 10.6202C9.19407 11.4768 7.18255 12.754 5.52874 14.3362C3.87251 15.9164 2.57196 17.7961 1.69346 19.8073C0.816989 21.8209 0.36459 23.9628 0.338287 26.0578C0.318055 27.5292 0.51269 28.9734 0.886588 30.3489C1.34303 30.7507 1.93949 30.9968 2.59502 30.9996C2.32229 29.3125 2.26483 27.6109 2.42345 25.9506C2.6711 23.3842 3.42577 20.9173 4.59966 18.7297C5.77112 16.5392 7.36262 14.6361 9.21187 13.1295C7.70981 14.9861 6.60632 17.0977 5.96536 19.295C5.32115 21.4919 5.13461 23.7698 5.37942 25.9506C5.58134 27.7291 6.07421 29.4384 6.80299 31H9.12932C9.11475 30.9684 9.09776 30.9373 9.08319 30.9053C8.01451 28.559 7.43465 26.0453 7.35776 23.5638C7.27724 21.0812 7.70374 18.637 8.55188 16.4077C8.1792 18.7665 8.27955 21.1472 8.823 23.3704C9.36321 25.5949 10.3408 27.6611 11.6434 29.4275C12.0549 29.9839 12.5017 30.5067 12.9727 31H16.2135C14.6047 29.665 13.2317 28.0949 12.1638 26.3714C10.8527 24.2615 10.0001 21.9318 9.62016 19.5766C10.4768 21.8056 11.7539 23.8172 13.3361 25.471C14.9162 27.1273 16.7958 28.4279 18.8069 29.3065C20.8205 30.183 22.9623 30.6354 25.0572 30.6613C26.5289 30.6815 27.9727 30.4873 29.3481 30.113C29.7499 29.6565 29.9959 29.06 29.9988 28.4045C28.3118 28.6772 26.6102 28.7347 24.95 28.576C22.3837 28.3284 19.9169 27.5737 17.7294 26.3997C15.5394 25.2282 13.6359 23.6367 12.1294 21.7874C13.9859 23.2895 16.0974 24.393 18.2947 25.034C20.4915 25.6782 22.7693 25.8648 24.95 25.62C26.7288 25.418 28.4376 24.9251 29.9996 24.1963V21.8699C29.968 21.8845 29.9369 21.9015 29.9049 21.916C27.5587 22.9848 25.045 23.5646 22.5637 23.6415C20.0812 23.7221 17.6371 23.2955 15.4079 22.4474C17.7666 22.8201 20.1472 22.7197 22.3703 22.1762C24.5951 21.636 26.6608 20.6583 28.4271 19.3557C28.9835 18.9442 29.5063 18.4974 30 18.0264V14.7862C28.6642 16.396 27.0942 17.769 25.3708 18.8365Z" />
@@ -99,12 +28,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/solarisdb/solarisdb.github.io/tree/main',
   project: {},
   navbar: {
-    extraContent: (
-      <>
-        <GlobalStyle />
-        <StyledThemeSwitch lite className="[&_span]:hidden" data-theme-switch />
-      </>
-    ),
+    extraContent: <StyledThemeSwitch lite className="[&_span]:hidden" data-theme-switch />,
   },
   search: {
     placeholder: 'Search...',
@@ -153,12 +77,6 @@ const config: DocsThemeConfig = {
         <meta property="og:site_name" content="Solaris" />
         {frontMatter.image ? <meta property="og:image" content={frontMatter.image} /> : null}
         {frontMatter.video ? <meta property="og:video" content={frontMatter.video} /> : null}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
       </>
     );
   },

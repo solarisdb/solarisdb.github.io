@@ -185,6 +185,7 @@ const IndexPage: FC = ({}) => {
       document.removeEventListener('scroll', onScroll);
     };
   }, []);
+
   return (
     <Container>
       <GlobalStyles $scrolled={scrolled} />
